@@ -1,0 +1,22 @@
+.center{
+   
+    margin:30px 80px 80px 80px;
+    box-shadow: 4px 4px 10px 10px gray;
+}
+.centerinput{
+    margin: 80px;
+    box-shadow: 4px 4px 10px 10px gray;
+    width: 800px;
+    margin-left: 350px;
+}
+.cen{
+    margin-top: 50px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0px;
+}
+
+#batn{
+    background-color: greenyellow;
+}
