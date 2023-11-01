@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en" title="Coding design">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> points table stage 2 </title>
+    <link rel="stylesheet" href="user.css">
+</head>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+<body>
+    <main class="table">
+        <section class="table__header">
+            <h1>stage 2</h1>
+        </section>
+        <section class="table__body">
+            <table>
+                <thead>
+                    <tr>
+                        <th> team </th>
+                        <th> captian name </th>
+                        <th> 1st pos </th>
+                        <th> 2nd pos </th>
+                        <th> 3rd pos </th>
+                        <th> kills </th>
+                        <th> points </th>
+                    </tr>
+                </thead>
+                <tbody>
+                       <tr>
+                           <% for (let index = 0; index < array.length; index++) { %>
+                               <tr>
+                                   <td> <%= array[index].team %></td>
+                                   <td> <%= array[index].p1.name %></td>
+                                   <td> <%= array[index].pos1 %></td>
+                                   <td> <%= array[index].pos2 %></td>
+                                   <td> <%= array[index].pos3 %></td>
+                                   <td> <%= array[index].kills %></td>
+                                   <td> <%= array[index].points %></td>
+                               </tr>
+                          <% } %>
+                      
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <a href="/pl">
+       <button class="baton">
+           players
+        </button>
+    </a>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<%- include('partials/header') %>
+
+<div class="cen">
+  <h1> stage 2</h1>
+</div>
+
+<div class="center">
+    <table class="table table-striped table-dark">
+        <thead>
+          <tr>
+            <th scope="col">team</th>
+            <th scope="col">captian name</th>
+            <th scope="col">1st position</th>
+            <th scope="col">2nd position</th>
+            <th scope="col">3rd position</th>
+            <th scope="col">kills</th>
+            <th scope="col">points</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% for (let index = 0; index < array.length; index++) { %>
+                <tr>
+                    <td> <%= array[index].team %></td>
+                    <td> <%= array[index].p1.name %></td>
+                    <td> <%= array[index].pos1 %></td>
+                    <td> <%= array[index].pos2 %></td>
+                    <td> <%= array[index].pos3 %></td>
+                    <td> <%= array[index].kills %></td>
+                    <td> <%= array[index].points %></td>
+                </tr>
+           <% } %>
+        </tbody>
+      </table>
+</div>
+
+<a href="/stage2match">
+  <button class="btn btn-lg btn-primary btn-block">
+  match
+  </button>
+</a>
+<a href="/playerkills">
+  <button class="btn btn-lg btn-primary btn-block">
+   playerkills
+  </button>
+</a>
+
+<a href="/">
+  <button class="btn btn-lg btn-primary btn-block" id="batn">
+   home
+  </button>
+</a>
+
+<%- include('partials/footer') %>

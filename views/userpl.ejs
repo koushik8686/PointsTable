@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en" title="Coding design">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> points table </title>
+    <link rel="stylesheet" href="user.css">
+</head>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">  
+    
+<body>
+    <a href="/">
+        <button class="baton">
+           home
+         </button>
+     </a>
+    <main class="table">
+        <section class="table__header">
+          <h1>players</h1>
+        </section>
+        <section class="table__body">
+            <table>
+                <thead>
+                    <tr>
+                        <th> Sno</th>
+                        <th> team </th>
+                        <th> player </th>
+                        <th> kills </th>
+                    </tr>
+                </thead>
+                <tbody>
+                       <tr>
+                           <% for (let index = 0; index < array.length; index++) { %>
+                               <tr>
+                                   <td> <%= index+1 %></td>
+                                   <td> <%= array[index].team %></td>
+                                   <td> <%= array[index].name %></td>
+                                   <td> <%= array[index].kills %></td>
+                               </tr>
+                          <% } %>
+                      
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+</body>
+
+</html>

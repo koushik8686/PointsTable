@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gameover</title>
+</head>
+<body>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="game.css">
+<div class="center">
+    <table >
+      <tr>
+      <td>team</td>
+      <td>ingame name</td>
+      <td> kills</td>
+      </tr>
+     <form action="/playerkills" method="post">
+                  <% for (let i = 0; i < array.length; i++) { %>
+                    <tr>
+                      <td class=""><%= array[i].team %></td>
+                      <td class=""><%= array[i].name %></td>
+                    <div class="" ><td><input  type="number" name="kills<%= i + 1 %>" class="inp"></td> </div>
+                    </tr>
+                  <% } %> 
+          </table>
+           </div>
+
+           <div class="buutn">
+          <button type="submit">Submit</button>
+        </div>
+        </form>
+</body>
+</html>
