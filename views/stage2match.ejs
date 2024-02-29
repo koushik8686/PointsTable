@@ -25,7 +25,7 @@
                   <% for (let i = 0; i < array.length; i++) { %>
                     <tr>
                       <td class=""><%= array[i].team %></td>
-                      <td class=""><%= array[i].p1.name %></td>
+                      <td class=""><%= array[i].captainingamename %></td>
                   <div class="">    <td><input  type="number" name="wins<%= i + 1 %>" class="inp"></td> </div>
                     <div class="" ><td><input type="number" name="kills<%= i + 1 %>" class="inp"></td> </div>
                     </tr>
@@ -42,10 +42,6 @@
           home
             </button>
         </a>
-        <a href="/playerkills">
-            <button class="btn btn-lg btn-primary btn-block">
-             playerkills
-            </button>
-        </a>
+
 </body>
 </html>

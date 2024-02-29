@@ -22,7 +22,6 @@
                 <thead>
                     <tr>
                         <th> team </th>
-                        <th> captian name </th>
                         <th> 1st pos </th>
                         <th> 2nd pos </th>
                         <th> 3rd pos </th>
@@ -35,7 +34,6 @@
                            <% for (let index = 0; index < array.length; index++) { %>
                                <tr>
                                    <td> <%= array[index].team %></td>
-                                   <td> <%= array[index].p1.name %></td>
                                    <td> <%= array[index].pos1 %></td>
                                    <td> <%= array[index].pos2 %></td>
                                    <td> <%= array[index].pos3 %></td>
@@ -48,11 +46,6 @@
             </table>
         </section>
     </main>
-    <a href="/pl">
-       <button class="baton">
-           players
-        </button>
-    </a>
 </body>
 
 </html>
