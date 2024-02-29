@@ -6,28 +6,19 @@ const app = express();app.set('view engine', 'ejs');
 const md5 = require("md5")
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
-mongoose.connect('mongodb+srv://pinnukoushik1:koushik2004@koushik.jttd3u3.mongodb.net/pointstable');
-const playerschema = mongoose.Schema({
-    name:String,
-    kills:Number,
-    team :String
-})
-
-const playermodel = mongoose.model("players",playerschema)
+mongoose.connect('mongodb+srv://pinnukoushik1:koushik2004@koushik.jttd3u3.mongodb.net/newpointstable');
 
 const schema = mongoose.Schema({
-   team:String,
-   p1:playerschema,
-   p2:playerschema,
-   p3:playerschema,
-   p4:playerschema,
-   pos1:Number,
-   pos2:Number,
-   pos3:Number,
-   kills:Number,
-   points:Number
+  team:String,
+  captian:String,
+  captainingamename:String,
+  pos1:Number,
+  pos2:Number,
+  pos3:Number,
+  kills:Number,
+  points:Number
 })
-const teammodel = mongoose.model("group1", schema)
+const teammodel = mongoose.model("grupp1", schema)
 const grp2teams = mongoose.model("group2",schema)
 app.get("/", async function (req, res) {
     try {

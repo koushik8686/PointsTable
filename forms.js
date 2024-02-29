@@ -24,10 +24,9 @@ const registeredschema = mongoose.Schema({
 const regmodel=mongoose.model("registeredteams",registeredschema)
 // Create new client
 var client = sheetdb(config);
-   client.read().then(function(data) {
-    console.log(data);
+   client.read().then( async function(data) {
     data=JSON.parse(data)
-   data.forEach(element => {
+   data.forEach( async (element) => {
     const a = new regmodel({
       team: element['Team Name'],
       captian:element['Captain Name'],
@@ -39,7 +38,8 @@ var client = sheetdb(config);
       kills:0,
       points:0
     });
-   a.save()
+ await a.save()
+ console.log("saved");
    });
   }, function(err){
     console.log(err);

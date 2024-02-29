@@ -28,28 +28,35 @@ app.get("/divide", async function (req, res) {
     res.render("divide",{array:arr})
   })
 })
-app.post("/divide", async function (req,res) { 
-  teammodell.find().then( async (arr)=>{
-  
-    for (let i = 0; i < arr.length; i++) {
+app.post("/divide", async function (req, res) {
   try {
-     const itemsToTransfer = await teammodell.find({ _id:arr[i]._id  });
-    
-     if (req[arr[i]._id] == "1") {
-      await grp1teams.insertMany(itemsToTransfer);
-    } else if(req[arr[i]._id] == "2") {
-      await grp2teams.insertMany(itemsToTransfer);
+    const arr = await teammodell.find();
+    console.log(arr);
+    console.log(req.body);
+    for (let i = 0; i < arr.length; i++) {
+      const teamId = arr[i]._id;
+      const selectedGroupId = req.body['team'+i];
+      console.log(selectedGroupId);
+      if (selectedGroupId === "1") {
+        const itemsToTransfer = await teammodell.find({ _id: teamId });
+        await grp1teams.insertMany(itemsToTransfer);
+        console.log(`Transfer successful to grp1 for team ${teamId}`);
+      } else if (selectedGroupId === "2") {
+        const itemsToTransfer = await teammodell.find({ _id: teamId });
+        await grp2teams.insertMany(itemsToTransfer);
+        console.log(`Transfer successful to grp2 for team ${teamId}`);
+      }
+      // await teammodell.deleteMany({ _id: arr[i]._id });
     }
-    await teammodell.deleteMany({ _id: arr[i]._id });
-    console.log('Transfer successful');
+
+    res.redirect('/'); // Respond with a success message or redirect as needed
+
   } catch (error) {
     console.error('Error transferring items:', error);
+    res.status(500).send('Internal Server Error');
   }
-  
-}
-  })
-  res.redirect("/")
- })
+});
+
 app.route("/match")
 .get(function (req, res) { 
     grp1teams.find().then( arr =>{
@@ -175,7 +182,11 @@ app.get("/home2", function (req, res) {
     })
  })
 
-
+app.get("/aa", function (req, res) { 
+  teammodell.find().then((arr)=>{
+    res.send(arr)
+  })
+ })
  app.route("/match2")
  .get(function (req, res) { 
      grp2teams.find().then( arr =>{
