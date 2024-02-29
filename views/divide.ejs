@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+  .item{
+    display: flex;
+  }
+  select{
+    height: 20px;
+    width: 50px;
+  }
+</style>
+<body>
+    <div class="main">
+        <form action="/divide" method="post">
+        <% for (let index = 0; index < array.length; index++) { %>
+      <div class="item">
+        <div class="name"> <%= array[index].team %> </div>
+        <div class="inp">
+            <select name= <%= array[index]._id %> id="">
+                <option value="1">group1</option>
+                <option value="2">group2</option>
+            </select>
+        </div>
+      </div>      
+      <%  } %>
+      <button type="submit">
+        submit
+      </button>
+    </form>
+    </div>
+</body>
+</html>
