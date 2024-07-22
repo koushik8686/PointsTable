@@ -21,6 +21,7 @@ const registeredschema = mongoose.Schema({
   points:Number
 })
 
+
 const regmodel=mongoose.model("registeredteams",registeredschema)
 // Create new client
 var client = sheetdb(config);

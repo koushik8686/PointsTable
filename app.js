@@ -3,11 +3,12 @@ const mongoose = require("mongoose")
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();app.set('view engine', 'ejs');
+require('dotenv').config();
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 var items =[]
-mongoose.connect('mongodb+srv://pinnukoushik1:koushik2004@koushik.jttd3u3.mongodb.net/newpointstable');
+mongoose.connect(process.env.URI);
 
 const schema = mongoose.Schema({
    team:String,
@@ -284,19 +285,19 @@ const qualifiedteamsmodel= mongoose.model("stage2", schema)
                 var p= arr[i].pos1+1
                 qualifiedteamsmodel.updateOne({_id:id},{$set :{pos1:p}})  .then(result => {
                })         
-             x=10      
+             x=12      
                }
                if (pos == 2) {
                  var p= arr[i].pos2+1
                  qualifiedteamsmodel.updateOne({_id:id},{$set :{pos2:p}})  .then(result => {
                    })
-                  x=9     
+                  x=11     
              }     
                if (pos==3) {
                  var p= arr[i].pos3+1
                  qualifiedteamsmodel.updateOne({_id:id},{$set :{pos3:p}})  .then(result => {
                    })
-                  x=8  
+                  x=10 
            }
            var kill = Number(req.body['kills' + (i + 1)])
            var pot = arr[i].points +kill+x

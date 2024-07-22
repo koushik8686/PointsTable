@@ -4,9 +4,10 @@ const bodyParser = require("body-parser");
 const encrypt = require("mongoose-encryption")
 const app = express();app.set('view engine', 'ejs');
 const md5 = require("md5")
+require('dotenv').config()
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
-mongoose.connect('mongodb+srv://pinnukoushik1:koushik2004@koushik.jttd3u3.mongodb.net/newpointstable');
+mongoose.connect(process.env.URI);
 
 const schema = mongoose.Schema({
   team:String,
